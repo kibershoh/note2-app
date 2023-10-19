@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
+import { Button } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -20,10 +21,11 @@ const style = {
 export default function TransitionsModal() {
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
+  const handleOpen = () => setOpen(true);
 
   return (
     <div>
-      {/* <Button onClick={handleOpen}>Open modal</Button> */}
+      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
