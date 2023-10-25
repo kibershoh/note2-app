@@ -1,14 +1,13 @@
+import Navbar from "./ComponentsNotes/Navbar"
 import Home from "./ComponentsNotes/home"
 
 function App() {
 
   return (
-   <div>
-    <Home/>
-    {/* <Navbar/>
-    <NoteList/> */}
-    
-   </div>
+    <div>
+      <Navbar />
+      <Home />
+      </div>
   )
 }
 

@@ -1,28 +1,42 @@
 import clsx from 'clsx'
 import {FaRegTrashAlt} from 'react-icons/fa'
-const NoteApp = ({todo, toggleComplated,deleteNote}) => {
+import {MdOutlineFormatItalic} from 'react-icons/md'
+import {RxStrikethrough} from 'react-icons/rx'
+import {GrBold} from 'react-icons/gr'
+const NoteApp = ({todo, toggleComplated,deleteNote,wavy,italic,through}) => {
   return (    
-      <ul>
-        <li>
-             
-            <div className={clsx('border pt-2 my-4 bg-slate-100 justify-between items-center px-3 border-blue-600 rounded', todo.complated ? 'bg-orange-500' : '')}>
+        <li className=''>             
+            <div className={clsx('border pt-2 my-4 justify-between items-center px-1  rounded', todo.complated ? '  bg-violet-500' : 'bg-slate-50 border-violet-300')}>
                 <div className='flex items-center pb-4 justify-between'>
+                            
                <div className='flex items-center'>
-                 <input onChange={()=>toggleComplated(todo)} className='mr-2 w-[18px] h-[18px]' size={25} type="checkbox"  checked={todo.complated ? 'checked' : ''}/>
-                <p className={todo.complated ? 'text-xl font-semibold text-white' : 'text-xl font-semibold'}>{todo.title}</p>
-               </div>
-               
-             <button onClick={()=>deleteNote(todo.id)} className={todo.complated ? 'text-white' : ''}> {<FaRegTrashAlt size={18}/>}</button>
+                 <input onChange={()=>toggleComplated(todo)} className='mr-2 w-[19px] h-[19px] bg-orange-500 accent-violet-800 border border-violet-500	' size={25} type="checkbox"  checked={todo.complated ? 'checked' : ''}/>
+                <p className={todo.complated ? 'text-xl font-semibold text-white max-lg:text-lg' : 'text-xl font-semibold max-lg:text-lg'}>{todo.title}</p>
+               </div> 
+
+                <button onClick={()=>deleteNote(todo.id)} className={todo.complated ? 'text-white' : ''}> {<FaRegTrashAlt size={16} className='hover:scale-125 duration-500'/>}</button>
+                      
             </div>
-             <p className={todo.complated ? 'text-semibold pr-4 pb-2 overflow-y-scroll h-20  text-md text-white' : 'text-semibold pr-4 pb-2  overflow-y-scroll h-20 text-md'}>{todo.text}</p>
-             <div className='flex justify-end items-center pt-2'>
-              <h1 className={todo.complated ? 'text-black mr-3' : 'text-slate-400 mr-3'}>{todo.getDay}/{todo.getMonth}/{todo.getYear},</h1>
-             <h2 className={todo.complated ? 'text-black' : 'text-slate-400'}>{todo.getHours}:{todo.getMinutes}</h2>
+
+
+
+             <p className={clsx(todo.complated ? 'text-semibold pr-4 pb-2 overflow-y-scroll overflow-x-scroll h-24  text-lg text-white max-lg:text-md' : 'text-semibold pr-4 max-lg:text-md pb-2  overflow-y-scroll h-24 text-md',
+             todo.italic ? 'italic' : '',
+             todo.through ? 'line-through' : '',
+             todo.wavy ? 'font-bold' : '',
+             
+             )}>{todo.text}</p>
+             <div className='grid pt-10 max-lg:pt-10 grid-cols-2 text-rigth'>
+            <div>
+              <button onClick={()=>italic(todo)} className={clsx('px-1 mx-1 rounded hover:scale-110 ',todo.italic ? 'bg-violet-800 text-white' : 'text-white bg-violet-500',)}><MdOutlineFormatItalic size={20}/></button>
+              <button onClick={()=>through(todo)} className={clsx('px-1 mx-1 rounded hover:scale-110 ',todo.through ? 'bg-violet-800 text-white' : 'text-white bg-violet-500', )}><RxStrikethrough size={20}/></button>
+              <button onClick={()=>wavy(todo)} className={clsx('px-1 mx-1 rounded hover:scale-110 ',todo.wavy ? 'bg-violet-800 text-white' : 'text-white bg-violet-500', )}><GrBold size={20}/></button>
+            </div>
+              <h1 className={todo.complated ? 'text-slate-200 mr-3 text-right' : 'text-slate-400 mr-3 text-right'}>{todo.getDay}/{todo.getMonth}/{todo.getYear}, {todo.getHours}:{todo.getMinutes}</h1>
              </div>
             </div>
             
         </li>
-      </ul>
   )
 }
 
