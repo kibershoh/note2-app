@@ -1,13 +1,13 @@
-import Navbar from "./Components/Navbar"
-import NoteList from "./Components/noteList"
+import Navbar from "./ComponentsNotes/Navbar"
+import Home from "./ComponentsNotes/home"
 
 function App() {
 
   return (
-   <div>
-    <Navbar/>
-    <NoteList/>
-   </div>
+    <div>
+      <Navbar />
+      <Home />
+      </div>
   )
 }
 
