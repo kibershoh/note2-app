@@ -2,14 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 ::-webkit-scrollbar {
   width: 2px;
   height: 1px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
 }
 
 /* Handle */
