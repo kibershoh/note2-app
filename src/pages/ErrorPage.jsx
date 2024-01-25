@@ -1,7 +1,7 @@
 import React from "react";
 
 const ErrorPage = () => {
-  return <div>Error has occured</div>;
+  return <div>Error has </div>;
 };
 
 export default ErrorPage;
