@@ -173,15 +173,7 @@ const Home = () => {
                   className="border mb-4 w-full border-blue-600 py-1 px-4 outline-none rounded"
                 />
               </div>
-              <div className="mb-3">
-                <input
-                  value={bookInput}
-                  onChange={(e) => setBookinput(e.target.value)}
-                  placeholder="Title ..."
-                  type="file"
-                  className="border mb-4 w-full border-blue-600 py-1 px-4 outline-none rounded"
-                />
-              </div>
+              
               <div>
                 <textarea
                   value={input}
