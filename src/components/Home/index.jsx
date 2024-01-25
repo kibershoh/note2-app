@@ -22,6 +22,7 @@ const Home = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
   const [title, setTitle] = useState("");
+  const [bookInput, setBookinput] = useState("");
 
   // Create note // Oldin shart berib todos ni ichida nimalar bo'lishini yozamiz
   // Create note
@@ -51,6 +52,7 @@ const Home = () => {
     await addDoc(collection(db, "notes"), {
       title: title,
       text: input,
+      book:bookInput,
       complated: false,
       getDay: getDay,
       getMonth: getMonth,
@@ -168,6 +170,15 @@ const Home = () => {
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Title ..."
                   type="text"
+                  className="border mb-4 w-full border-blue-600 py-1 px-4 outline-none rounded"
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  value={bookInput}
+                  onChange={(e) => setBookinput(e.target.value)}
+                  placeholder="Title ..."
+                  type="file"
                   className="border mb-4 w-full border-blue-600 py-1 px-4 outline-none rounded"
                 />
               </div>

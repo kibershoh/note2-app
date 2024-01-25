@@ -6,11 +6,7 @@ const Navbar = () => {
       <nav>
         <Link className='text-xl font-bold'><span className='text-violet-600'>My</span>Notes</Link>
       </nav>
-      <div>
-        <button className='bg-violet-600 rounded text-white font-semibold text-lg px-1'>
-        Login
-        </button>
-      </div>
+     
     </div>
   )
 }

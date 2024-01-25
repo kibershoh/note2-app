@@ -34,6 +34,7 @@ const NoteApp = ({todo, toggleComplated,deleteNote,wavy,italic,through}) => {
             </div>
               <h1 className={todo.complated ? 'text-slate-200 mr-3 text-right' : 'text-slate-400 mr-3 text-right'}>{todo.getDay}/{todo.getMonth}/{todo.getYear}, {todo.getHours}:{todo.getMinutes}</h1>
              </div>
+             {/* <a href={}  className="bg-blue-600 p-2 rounded text-white">Read book</a> */}
             </div>
             
         </li>
